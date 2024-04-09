@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=3 uid="uid://cyv5gxoocnsrb"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_673he"]
+[ext_resource type="Texture2D" uid="uid://c58ywactpelx0" path="res://assets/bck.png" id="1_fy72x"]
+[ext_resource type="Script" path="res://scenes/Menu.gd" id="3_6blfw"]
+[ext_resource type="TileSet" uid="uid://dkqwqts8mgb6i" path="res://squre.tres" id="4_34eus"]
+[ext_resource type="Texture2D" uid="uid://dthhqj70j1l03" path="res://assets/quit1.png" id="4_jnxma"]
+[ext_resource type="Texture2D" uid="uid://cfira0aerfjx6" path="res://assets/quit2.png" id="5_f33hs"]
+[ext_resource type="Texture2D" uid="uid://bnf65phni25a6" path="res://assets/new1.png" id="7_j7swd"]
+[ext_resource type="Texture2D" uid="uid://cjxpg484ki5a" path="res://assets/new2.png" id="9_cku47"]
+[ext_resource type="AudioStream" uid="uid://bwl6l3utxedbc" path="res://assets/Song.wav" id="10_am3lp"]
+[ext_resource type="AudioStream" uid="uid://10nenifbfnni" path="res://assets/Song1.wav" id="11_5lcnk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_varv6"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_ikab5"]
+font_size = 25
+
+[sub_resource type="SystemFont" id="SystemFont_cmt0c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cy6l7"]
+font = SubResource("SystemFont_cmt0c")
+font_size = 25
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_673he")
+metadata/_edit_horizontal_guides_ = [348.0]
+metadata/_edit_vertical_guides_ = [419.0]
+
+[node name="Bck" type="Sprite2D" parent="."]
+texture = ExtResource("1_fy72x")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Main" type="TileMap" parent="."]
+position = Vector2(60, 60)
+tile_set = ExtResource("4_34eus")
+format = 2
+layer_0/name = "Dead"
+layer_0/tile_data = PackedInt32Array(-65536, 131072, 805306368, -65535, 131072, 805306368, -65534, 131072, 805306368, -65533, 131072, 805306368, -65532, 131072, 805306368, -65531, 131072, 805306368, -65530, 131072, 805306368, -65529, 131072, 805306368, -65528, 131072, 805306368, -65527, 131072, 805306368, -65526, 0, 805306369, -1, 0, 1342177281, 65535, 131072, 1342177280, 131071, 131072, 1342177280, 196607, 131072, 1342177280, 262143, 131072, 1342177280, 327679, 131072, 1342177280, 393215, 131072, 1342177280, 458751, 131072, 1342177280, 524287, 131072, 1342177280, 589823, 131072, 1342177280, 655359, 131072, 1342177280, 720895, 131072, 1342177280, 786431, 131072, 1342177280, 851967, 131072, 1342177280, 917503, 131072, 1342177280, 983039, 131072, 1342177280, 1048575, 131072, 1342177280, 1114111, 131072, 1342177280, 1179647, 131072, 1342177280, 1245183, 131072, 1342177280, 1310719, 131072, 1342177280, 1376255, 0, 1, 1310720, 131072, 0, 1310721, 131072, 0, 1310722, 131072, 0, 1310723, 131072, 0, 1310724, 131072, 0, 1310725, 131072, 0, 1310726, 131072, 0, 1310727, 131072, 0, 1310728, 131072, 0, 1310729, 131072, 0, 1310730, 0, 1610612737, 1245194, 131072, 1610612736, 1179658, 131072, 1610612736, 1114122, 131072, 1610612736, 983050, 131072, 1610612736, 1048586, 131072, 1610612736, 917514, 131072, 1610612736, 851978, 131072, 1610612736, 786442, 131072, 1610612736, 720906, 131072, 1610612736, 655370, 131072, 1610612736, 589834, 131072, 1610612736, 524298, 131072, 1610612736, 458762, 131072, 1610612736, 393226, 131072, 1610612736, 327690, 131072, 1610612736, 262154, 131072, 1610612736, 196618, 131072, 1610612736, 131082, 131072, 1610612736, 65546, 131072, 1610612736, 10, 131072, 1610612736)
+layer_1/name = "Live"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Schrodinger"
+layer_2/tile_data = PackedInt32Array()
+
+[node name="NEXT" type="Label" parent="."]
+offset_left = 395.0
+offset_top = 58.0
+offset_right = 459.0
+offset_bottom = 93.0
+text = "NEXT
+"
+label_settings = SubResource("LabelSettings_varv6")
+
+[node name="Sco" type="Label" parent="."]
+offset_left = 396.0
+offset_top = 310.0
+offset_right = 476.0
+offset_bottom = 345.0
+text = "SCORE
+"
+label_settings = SubResource("LabelSettings_ikab5")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 350.0
+offset_right = 536.0
+offset_bottom = 430.0
+label_settings = SubResource("LabelSettings_cy6l7")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_6blfw")
+
+[node name="Quit" type="TextureButton" parent="Menu"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 591.0
+offset_right = 535.0
+offset_bottom = 645.0
+texture_normal = ExtResource("4_jnxma")
+texture_pressed = ExtResource("5_f33hs")
+texture_hover = ExtResource("5_f33hs")
+
+[node name="New" type="TextureButton" parent="Menu"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 517.0
+offset_right = 535.0
+offset_bottom = 571.0
+texture_normal = ExtResource("7_j7swd")
+texture_pressed = ExtResource("9_cku47")
+texture_hover = ExtResource("9_cku47")
+
+[node name="lo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_am3lp")
+
+[node name="xo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_5lcnk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Menu/Quit" to="Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/New" to="." method="_on_new_pressed"]

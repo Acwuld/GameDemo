@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ivemluy4xw5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jg8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05lfa"]
+
+[node name="Horent" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2jg8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_05lfa")

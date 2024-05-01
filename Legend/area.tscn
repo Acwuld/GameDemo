@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://673v5ypbdpgq"]
+
+[ext_resource type="PackedScene" uid="uid://o6i78v1625ow" path="res://player.tscn" id="1_nbyh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acish"]
+size = Vector2(1196, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftn5a"]
+size = Vector2(352, 29)
+
+[node name="Area" type="StaticBody2D"]
+metadata/_edit_horizontal_guides_ = [683.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(572, 614.5)
+shape = SubResource("RectangleShape2D_acish")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -598.0
+offset_top = -68.0
+offset_right = 599.0
+offset_bottom = 71.0
+color = Color(0.2, 0.47451, 1, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(850, 538)
+shape = SubResource("RectangleShape2D_ftn5a")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D2"]
+offset_left = -176.0
+offset_top = -14.5
+offset_right = 177.0
+offset_bottom = 6.5
+color = Color(0.341176, 1, 1, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_nbyh4")]
+position = Vector2(76, 355)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_bottom = 683
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

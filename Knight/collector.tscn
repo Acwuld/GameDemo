@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3c353chour3n"]
+
+[ext_resource type="Script" path="res://collector.gd" id="1_owohn"]
+[ext_resource type="Texture2D" uid="uid://vt8f3a1ga5r2" path="res://Pic/collertor.png" id="2_tkr3e"]
+[ext_resource type="AudioStream" uid="uid://dinbrddx77apr" path="res://SoundEffect/Collector/Collector_Roar.ogg" id="3_5vak4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vakhj"]
+size = Vector2(305, 370)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmpta"]
+atlas = ExtResource("2_tkr3e")
+region = Rect2(4, 23, 415, 366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j6wj"]
+atlas = ExtResource("2_tkr3e")
+region = Rect2(424, 23, 415, 366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mmfu"]
+atlas = ExtResource("2_tkr3e")
+region = Rect2(844, 23, 415, 366)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bi5f5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmpta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j6wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mmfu")
+}],
+"loop": true,
+"name": &"roar",
+"speed": 6.0
+}]
+
+[node name="collector" type="CharacterBody2D"]
+position = Vector2(719, 476)
+script = ExtResource("1_owohn")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14.5, -1)
+shape = SubResource("RectangleShape2D_vakhj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bi5f5")
+animation = &"roar"
+frame_progress = 0.329296
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5vak4")

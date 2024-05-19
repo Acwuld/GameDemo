@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://673v5ypbdpgq"]
+[gd_scene load_steps=8 format=3 uid="uid://673v5ypbdpgq"]
 
 [ext_resource type="Texture2D" uid="uid://ccgj2oivqe62n" path="res://Asset/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="1_bcfcm"]
 [ext_resource type="PackedScene" uid="uid://o6i78v1625ow" path="res://player.tscn" id="2_grldl"]
 [ext_resource type="Texture2D" uid="uid://bhasodsf3mo6t" path="res://Asset/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="3_hv5s8"]
+[ext_resource type="Texture2D" uid="uid://bc7gdpjil0stn" path="res://Asset/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="4_nmobn"]
+[ext_resource type="Texture2D" uid="uid://cw7mqhs4pmflr" path="res://Asset/Legacy-Fantasy - High Forest 2.3/Trees/Golden-Tree.png" id="5_8vcht"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shm2i"]
 texture = ExtResource("1_bcfcm")
@@ -306,7 +308,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_shm2i")
 
 [node name="World" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [217.0]
+metadata/_edit_horizontal_guides_ = [217.0, 224.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4u4wj")
@@ -316,12 +318,155 @@ layer_0/tile_data = PackedInt32Array(851968, 196608, 0, 851969, 196608, 0, 85197
 [node name="Player" parent="." instance=ExtResource("2_grldl")]
 position = Vector2(37, 197)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="background" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
-[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="background"]
+
+[node name="Sky" type="ParallaxLayer" parent="background/ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.2)
 motion_mirroring = Vector2(480, 0)
 
-[node name="Background" type="Sprite2D" parent="ParallaxBackground/Sky"]
+[node name="Background" type="Sprite2D" parent="background/ParallaxBackground/Sky"]
 texture = ExtResource("3_hv5s8")
 centered = false
+
+[node name="Hills" type="ParallaxLayer" parent="background/ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.8)
+
+[node name="Background" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(0, 129)
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background4" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(282, 129)
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background7" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(559, 130)
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background8" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(632, 136)
+rotation = -0.122669
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background9" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(718, 131)
+rotation = -0.122669
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background10" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(806, 125)
+rotation = -0.122669
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background5" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(372, 130)
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background6" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(464, 128)
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background2" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(95, 129)
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Background3" type="Sprite2D" parent="background/ParallaxBackground/Hills"]
+position = Vector2(190, 129)
+texture = ExtResource("4_nmobn")
+centered = false
+region_enabled = true
+region_rect = Rect2(704, 8, 96, 248)
+
+[node name="Trees" type="ParallaxLayer" parent="background/ParallaxBackground"]
+motion_scale = Vector2(0.8, 1)
+
+[node name="Golden-tree" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(37, 307)
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree2" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(101, 304)
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree3" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(165, 302)
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree4" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(222, 301)
+rotation = 0.0232878
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree5" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(283, 300)
+rotation = 0.0232878
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree6" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(339, 299)
+rotation = 0.0232878
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree7" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(403, 298)
+rotation = 0.0232878
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree8" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(472, 299)
+rotation = 0.0232878
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)
+
+[node name="Golden-tree9" type="Sprite2D" parent="background/ParallaxBackground/Trees"]
+position = Vector2(531, 298)
+rotation = 0.0232878
+texture = ExtResource("5_8vcht")
+region_enabled = true
+region_rect = Rect2(8, 392, 96, 320)

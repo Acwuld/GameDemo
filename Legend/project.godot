@@ -11,12 +11,16 @@ config_version=5
 [application]
 
 config/name="Legend"
-run/main_scene="res://area.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=384
+window/size/viewport_height=216
+window/size/window_width_override=1152
+window/size/window_height_override=648
 window/stretch/mode="canvas_items"
 
 [file_customization]

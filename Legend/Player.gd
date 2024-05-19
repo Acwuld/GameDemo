@@ -1,8 +1,8 @@
 extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
-const RUN_SPEED := 200.0
-const JUMP_VELOCITY := -300.0
+const RUN_SPEED := 160.0
+const JUMP_VELOCITY := -320.0
 var gravty := ProjectSettings.get("physics/2d/default_gravity") as float
 func _physics_process(delta: float) -> void:
 	var direction :=  Input.get_axis("move_left","move_right")

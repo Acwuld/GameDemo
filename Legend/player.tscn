@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Player.gd" id="1_6iy8t"]
 [ext_resource type="Texture2D" uid="uid://btmjiorun0rmb" path="res://Asset/red1.png" id="2_k3v75"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57ijp"]
-size = Vector2(16, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqm1i"]
+size = Vector2(15, 32)
 
 [sub_resource type="Animation" id="Animation_an6cp"]
 length = 0.001
@@ -178,11 +178,10 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_6iy8t")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17)
-shape = SubResource("RectangleShape2D_57ijp")
+position = Vector2(0.5, -16)
+shape = SubResource("RectangleShape2D_kqm1i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, -28)
@@ -195,3 +194,7 @@ region_rect = Rect2(0, 0, 336, 56)
 libraries = {
 "": SubResource("AnimationLibrary_vssfj")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 220
+limit_smoothed = true

@@ -14,10 +14,10 @@ position = Vector2(1015, 920)
 shape = SubResource("RectangleShape2D_uxydo")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
-offset_left = -1141.0
-offset_top = -60.0
-offset_right = 1126.0
-offset_bottom = 385.0
+offset_left = -1125.0
+offset_top = -33.0
+offset_right = 1142.0
+offset_bottom = 412.0
 color = Color(0.268555, 0.0982364, 0.176797, 1)
 
 [node name="collector" parent="." instance=ExtResource("1_68h63")]
